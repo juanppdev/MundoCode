@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro'
+import Swiper from '../components/Swiper.astro'
+---
+
+<Layout title="About | MundoCode">
+	<Header/>
+
+    <section class="bg-white dark:bg-gray-900">
+        <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+          <img class="w-full" src="/image/cta.svg" alt="dashboard image"/>
+          <div class="mt-4 md:mt-0">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center">Nuestra Misión</h2>
+            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">En MundoCode, nuestra misión es transformar ideas en realidad digital. Nos dedicamos a crear sitios web, aplicaciones y programas personalizados que no solo satisfacen las necesidades de nuestros clientes, sino que también superan sus expectativas. Nuestro enfoque se centra en la innovación, la creatividad y la excelencia técnica para ofrecer soluciones digitales que impulsen el éxito de individuos y empresas en un mundo cada vez más digitalizado.</p>
+            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">En MundoCode, nuestra pasión por la tecnología y la creatividad se fusiona para dar vida a proyectos digitales extraordinarios. Nuestra misión es ser el socio confiable y talentoso en el viaje digital de nuestros clientes, brindándoles soluciones que no solo satisfacen sus necesidades presentes, sino que también los preparan para el futuro digital.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white dark:bg-gray-900">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center">Nuestra Historia</h2>
+        <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+          <img class="w-full" src="/image/MundoCode.png" alt="dashboard image"/>
+          <div class="mt-4 md:mt-0">
+            
+            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">MundoCode (Antes conocido como Fomundi) nace de la pasión de un joven por la programación y la fotografía. El nombre "MundoCode" surge de la combinación de "Mundo", y "Code" por la "Programación". Además del diseño, también se enfocan en programación, ya que hay que diseñar algunos aspectos de la programación también.</p>
+            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">En MundoCode, nuestra pasión por la tecnología y la creatividad se fusiona para dar vida a proyectos digitales extraordinarios. Nuestra misión es ser el socio confiable y talentoso en el viaje digital de nuestros clientes, brindándoles soluciones que no solo satisfacen sus necesidades presentes, sino que también los preparan para el futuro digital.</p>
+            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Ademas todo esto surge cuando empezó a programar, a seguir cursos en linea y a meterse mas en este mundo de la Programación y más o menos entre 1 o dos años en el mundo de la Fotografia.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="bg-white dark:bg-gray-900">
+        <h2 class="text-4xl mb-8 tracking-tight font-extrabold text-gray-900 dark:text-white text-center">Nuestra Historia</h2>
+        
+        <Swiper/>
+
+      </section>
+
+      <section class="bg-white dark:bg-gray-900">
+        <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+          <img class="w-96 h-96 mx-auto" src="/image/juan.jpg" alt="Juan image"/>
+          <div class="mt-4 md:mt-0">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center">¿Quién está detrás de todo esto?</h2>
+            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Mi nombre es Juan Pablo Patino Lopez, tengo 24 años de edad y soy de Colombia. He aprendido por cuenta propia y aún lo sigo haciendo. Esta es la única web que he podido realizar. Además, quiero poder realizar proyectos con más gente, pero por ahora me gustaría dedicarme a seguir aprendiendo e ir creando proyectos personales. Si quieres saber más de mí, te invito a que le des click a <a href="/portfolio">Portfolio</a>.</p>
+          </div>
+        </div>
+      </section>
+        
+</Layout>

@@ -1,0 +1,22 @@
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+.swiper {
+  width: 75%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  margin-left: 60px;
+  margin-right: 60px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
