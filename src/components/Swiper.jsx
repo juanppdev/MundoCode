@@ -19,7 +19,7 @@ export default function Fswiper() {
         spaceBetween={30}
         navigation={true}
         breakpoints={{
-            640: {
+            412: {
               slidesPerView: 1
             },
             768: {
