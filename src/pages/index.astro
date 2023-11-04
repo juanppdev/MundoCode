@@ -2,6 +2,28 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro'
 import Hero from '../components/Hero.astro'
+import { connection } from '../../lib/db';
+
+async function getPosts() {
+  try {
+    let data = await new Promise((resolve, reject) => {
+      //Query a DB
+      connection.query('SELECT * FROM posts limit 4', (error, results, fields) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve(results);
+                }
+            });
+    });
+
+    return data;
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+const posts = await getPosts();
 
 ---
 
@@ -11,10 +33,50 @@ import Hero from '../components/Hero.astro'
         <section class="bg-center bg-no-repeat bg-[url('/image/hero.jpg')] bg-gray-700 bg-blend-multiply">
             <Hero/>
         </section>
+
         <section>
             <h1 class="text-center text-2xl py-5">Blog</h1>
-            <div>
-              
+                <div class="mx-auto grid mb-10 max-w-2xl sm:grid-cols-2 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-4 sm:pt-4 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        
+                  {posts.map((data) => {
+                    console.log(data)
+                    const date = new Date(data.fecha)
+                    const formatDate = date.toISOString().split('T')[0]
+                      return (
+                        
+                      <article class="flex max-w-xl flex-col items-start justify-between">
+                        <div class="flex items-center gap-x-4 text-xs">
+                          <time datetime="2020-03-16" class="text-gray-500">{formatDate}</time>
+                          <a href=`posts/${data.titulo}` class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{data.categoria}</a>
+                        </div>
+                        <div class="group relative">
+                          <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                            <a href=`posts/${data.titulo}`>
+                              <span class="absolute inset-0"></span>
+                              {data.titulo}
+                            </a>
+                          </h3>
+                          <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{data.contenido}</p>
+                        </div>
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                          <img src={data.imagen_perfil} alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                          <div class="text-sm leading-6">
+                            <p class="font-semibold text-gray-900">
+                              <a href="#">
+                                <span class="absolute inset-0"></span>
+                                {data.nombre_pefil}
+                              </a>
+                            </p>
+                          </div>
+                        </div>
+                      </article>
+                      )
+                    })
+                  }
+                  <!-- More posts... -->
+                </div>
+              </div>
             </div>
-        </section>
+            
+          </section>
 </Layout>
