@@ -19,14 +19,38 @@ export default function Fswiper() {
         spaceBetween={30}
         navigation={true}
         breakpoints={{
+            280: {
+                slidesPerView: 1
+              },
+            375: {
+                slidesPerView: 1
+              },
+              360: {
+                slidesPerView: 1
+              },
+              390: {
+                slidesPerView: 1
+              },
+              414: {
+                slidesPerView: 1
+              },
             412: {
               slidesPerView: 1
             },
-            768: {
-              slidesPerView: 1
+            430: {
+                slidesPerView: 1
+              },
+              540: {
+                slidesPerView: 1
+              },
+            768: {//Mirar
+              slidesPerView: 2
             },
+            820: {
+                slidesPerView: 2
+              },
             1024: {
-              slidesPerView: 1
+              slidesPerView: 2
             },
           }}
         modules={[FreeMode, Navigation]}
