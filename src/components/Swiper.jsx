@@ -18,6 +18,17 @@ export default function Fswiper() {
         slidesPerView={3}
         spaceBetween={30}
         navigation={true}
+        breakpoints={{
+            640: {
+              slidesPerView: 1
+            },
+            768: {
+              slidesPerView: 1
+            },
+            1024: {
+              slidesPerView: 1
+            },
+          }}
         modules={[FreeMode, Navigation]}
         className="mySwiper"
       >
