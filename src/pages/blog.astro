@@ -7,7 +7,7 @@ async function getPosts() {
   try {
     let data = await new Promise((resolve, reject) => {
       //Query a DB
-      connection.query('SELECT * FROM posts', (error, results, fields) => {
+      connection.query('SELECT * FROM posts ORDER BY fecha DESC', (error, results, fields) => {
                 if (error) {
                     reject(error);
                 } else {
@@ -40,12 +40,12 @@ const posts = await getPosts();
         </div>
         <div class="mx-auto mt-10 grid max-w-2xl sm:grid-cols-2 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
 
-          {posts.map((data) => {
-            console.log(data)
-            const date = new Date(data.fecha)
-            const formatDate = date.toISOString().split('T')[0]
+          {posts.length > 0 ? (
+            posts.map((data) => {
+              const date = new Date(data.fecha);
+              const formatDate = date.toISOString().split('T')[0];
+    
               return (
-                
               <article class="flex max-w-xl flex-col items-start justify-between">
                 <div class="flex items-center gap-x-4 text-xs">
                   <time datetime="2020-03-16" class="text-gray-500">{formatDate}</time>
@@ -72,9 +72,11 @@ const posts = await getPosts();
                   </div>
                 </div>
               </article>
-              )
+              );
             })
-          }
+          ) : (
+            <h2 class="text-center text-xl">No hay posts publicados</h2>
+          )}
           <!-- More posts... -->
         </div>
       </div>
